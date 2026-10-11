@@ -1,0 +1,6 @@
+@PersonalPortfolio.Server_HostAddress = http://localhost:5292
+
+GET {{PersonalPortfolio.Server_HostAddress}}/projects/
+Accept: application/json
+
+###
