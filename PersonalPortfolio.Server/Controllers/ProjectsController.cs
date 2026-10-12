@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using PersonalPortfolio.Server.Data;
+using PersonalPortfolio.Server.Models;
 
 namespace PersonalPortfolio.Server.Controllers
 {
@@ -6,22 +10,22 @@ namespace PersonalPortfolio.Server.Controllers
     [Route("[controller]")]
     public class ProjectsController : ControllerBase
     {
+        private readonly ProjectContext _context;
 
-        [HttpGet(Name = "Projects")]
-
-        public IEnumerable<Projects> Get()
+        public ProjectsController(ProjectContext context)
         {
-            return Enumerable.Range(1, 15).Select(index => new Projects
-            {
-                projectId = index,
-                projectName = "Name",
-                projectType = "Filler",
-                projectDescription = $"This is a description for project {index}.",
-                projectLink = $"https://google.com",
-                dateCompleted = DateOnly.FromDateTime(DateTime.Now.AddDays(-index * 30)),
-                lastUpdated = DateOnly.FromDateTime(DateTime.Now.AddDays(-index * 15))
-            })
-            .ToArray();
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Project>>> Get()
+        {
+            var projects = await _context.Projects
+                .AsNoTracking()
+                .OrderByDescending(p => p.DateCompleted)
+                .ToListAsync();
+
+            return Ok(projects);
         }
     }
 }
