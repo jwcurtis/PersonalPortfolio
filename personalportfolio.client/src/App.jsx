@@ -1,41 +1,45 @@
-﻿import { useEffect, useState } from 'react';
+﻿import { useState } from 'react';
 import './App.css';
-import ProjectThumbnail from './ProjectThumbnail';
+import { ReturnContent } from './PageData';
 
 export function InitApp() {
-    const [projects, setProjects] = useState();
-    const [newView, setNewView] = useState(false);
-
-    useEffect(() => {
-        populateProjects();
-    }, []);
-
-    const newViewContents = projects === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        :
-        <div className="thumbnail-holder">
-            {projects.map(project =>
-                <ProjectThumbnail key={project.projectId} project={project} />
-            )}
-        </div>;
+    const [open, setOpen] = useState('');
+    const pageContent = ReturnContent(open);
 
     return (
-        <div>
-            <h1 id="tableLabel">Portfolio Projects</h1>
-            <p>This component demonstrates fetching data from the server.</p>
+        <body>
+            <h1 id="tableLabel">Jacob Curtis</h1>
+            <h2>Software Engineer</h2>
+            <div className = "navbar">
 
-            <button onClick={() => setNewView(!newView)}>
-                {newView ? 'Hide' : 'Load'} Portfolio
-            </button>
-            {newView && newViewContents}
-        </div>
+                <button onClick={() => setOpen('featured-projects')}>
+                    {open === 'featured-projects' ? 'Showing' : 'Open'} Featured Projects
+                </button>
+
+                <button onClick={() => setOpen('languages')}>
+                    {open === 'languages' ? 'Showing' : 'Open'} Languages & Frameworks
+                </button>
+
+                <button onClick={() => setOpen('technical-highlights')}>
+                    {open === 'technical-highlights' ? 'Showing' : 'Open'} Technical Highlights
+                </button>
+
+                <button onClick={() => setOpen('resume')}>
+                    {open === 'resume' ? 'Showing' : 'Open'} Resume
+                </button>
+
+                <button onClick={() => setOpen('contacts')}>
+                    {open === 'contacts' ? 'Showing' : 'Open'} Contacts & Links
+                </button>
+
+                <button onClick={() => setOpen('education')}>
+                    {open === 'education' ? 'Showing' : 'Open'} Education & Certifications
+                </button>
+            </div>
+
+            <div className="content">
+                {pageContent}
+            </div>
+        </body>
     );
-
-    async function populateProjects() {
-        const response = await fetch('projects');
-        if (response.ok) {
-            const data = await response.json();
-            setProjects(data);
-        }
-    }
 }

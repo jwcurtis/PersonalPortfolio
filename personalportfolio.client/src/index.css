@@ -110,10 +110,17 @@ code {
   background: var(--code-bg);
 }
 
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    background-color: var(--accent-bg);
+}
+
 button {
     cursor: pointer;
     font-family: var(--sans);
-    margin-top: 25px;
+    margin: 25px,5px,5px,25px;
     font-size: 28px;
     line-height: 135%;
     padding: 4px 8px;
@@ -124,6 +131,24 @@ button {
 }
 button:hover {
     background: var(--accent-border);
+}
+
+.thumbnail-holder {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: grey;
+}
+
+.project-thumbnail {
+    width: 30%;
+    height: 250px;
+    border: 3px solid var(--border);
+    padding: 1px;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: dimgrey;
 }
 
 .thumbnail-title {
@@ -138,21 +163,4 @@ button:hover {
     padding: 4px 8px;
     text-align: left;
     vertical-align: top;
-}
-
-.thumbnail-holder {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.project-thumbnail {
-    
-    width: 30%;
-    height: 250px;
-    border: 3px solid var(--border);
-    padding: 1px;
-    margin: 10px;
-    border-radius: 15px;
-    background-color: dimgrey;
 }
