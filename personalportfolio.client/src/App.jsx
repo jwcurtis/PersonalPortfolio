@@ -1,48 +1,36 @@
 ﻿import { useEffect, useState } from 'react';
 import './App.css';
+import ProjectThumbnail from './ProjectThumbnail';
 
-function App() {
+export function InitApp() {
     const [projects, setProjects] = useState();
+    const [newView, setNewView] = useState(false);
 
     useEffect(() => {
         populateProjects();
     }, []);
 
-    const contents = projects === undefined
+    const newViewContents = projects === undefined
         ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tableLabel">
-            <thead>
-                <tr>
-                    <th>Project Name</th>
-                    <th>Project Type</th>
-                    <th>Project Description</th>
-                    <th>Date Completed</th>
-                    <th>Last Updated</th>
-                    <th>Project Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                {projects.map(project =>
-                    <tr key={project.projectName}>      
-                        <td>{project.projectName}</td>           
-                        <td>{project.projectType}</td>
-                        <td>{project.projectDescription}</td>
-                        <td>{project.dateCompleted}</td>
-                        <td>{project.lastUpdated}</td>
-                        <td>{project.projectLink}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
+        :
+        <div className="thumbnail-holder">
+            {projects.map(project =>
+                <ProjectThumbnail key={project.projectId} project={project} />
+            )}
+        </div>;
 
     return (
         <div>
             <h1 id="tableLabel">Portfolio Projects</h1>
             <p>This component demonstrates fetching data from the server.</p>
-            {contents}
+
+            <button onClick={() => setNewView(!newView)}>
+                {newView ? 'Hide' : 'Load'} Portfolio
+            </button>
+            {newView && newViewContents}
         </div>
     );
-    
+
     async function populateProjects() {
         const response = await fetch('projects');
         if (response.ok) {
@@ -51,5 +39,3 @@ function App() {
         }
     }
 }
-
-export default App;

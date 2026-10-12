@@ -2,6 +2,7 @@
 {
     public class Projects
     {
+        public int projectId { get; set; }
         public string? projectName { get; set; }
         public string? projectType { get; set; }
         public string? projectDescription { get; set; }
