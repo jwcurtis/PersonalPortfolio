@@ -1,7 +1,8 @@
-import ProjectThumbnail from './ProjectThumbnail';
-import { useEffect, useState, ViewTransition, startTransition} from 'react';
+import {ProjectObject, PageHeader} from './PageObjects';
+import {LanguageFrameworkObject} from './LanguageFrameworkObjects';
+import { useEffect, useState, startTransition} from 'react';
 
-export function ReturnContent(targetContent) {
+export function CreateContent(targetContent) {
     switch (targetContent) {
         case 'featured-projects':
               return <ReturnProjects />;
@@ -28,11 +29,13 @@ function ReturnProjects() {
     }, []);
 
     const featuredProjects = (
-        <div className="thumbnail-holder">
-            {projects?.map(project => (
-               
-                <ProjectThumbnail key={project.projectId} project={project} />
-            ))}
+        <div className="featured-projects">
+            <PageHeader title="Featured Projects" subtitle="A showcase of my work and accomplishments." />
+            <div className="object-holder">
+                {projects?.map(project => (
+                    <ProjectObject key={project.projectId} project={project} class="square-object" />
+                ))}
+            </div>
         </div>
     );
 
@@ -50,41 +53,38 @@ function ReturnProjects() {
 }
 
 function ReturnLanguages() {
-    return (
-        <div className="languages">
-            <h2>Languages</h2>
+    const languages = (
+        <div className="languages-frameworks">
+            <PageHeader title="Languages & Frameworks" subtitle="JavaScript, React, Node.js, Express, MongoDB, SQL, HTML, CSS" />
+            <div className="language-framework-holder">
+                <LanguageFrameworkObject />
+            </div>
         </div>
     );
+
+    return (languages);
 }
 
 function ReturnTechnical() {
     return (
-        <div className="technical-highlights">
-            <h2>Technical Highlights</h2>
-        </div>
+        <PageHeader title="Technical Highlights" subtitle="Full Stack Development, RESTful APIs, Responsive Design, Version Control (Git), Agile Methodologies" />
     );
 }
 
 function ReturnResume() {
     return(
-        <div className="resume">
-            <h2>Resume</h2>
-        </div>
+        <PageHeader title="Resume" subtitle="Download my resume for a detailed overview of my skills and experience." />
     )
 }
 
 function ReturnContacts() {
     return(
-        <div className="contacts">
-            <h2>Contacts</h2>
-        </div>
+        <PageHeader title="Contacts & Links" subtitle="Feel free to reach out to me through any of the following channels." />
     )
 }
 
 function ReturnEducation() {
     return(
-        <div className="education">
-            <h2>Education</h2>
-        </div>
+        <PageHeader title="Education & Certifications" subtitle="Bachelor of Science in Computer Science" />
     )
 }
