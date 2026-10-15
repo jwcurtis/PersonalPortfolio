@@ -116,7 +116,7 @@ code {
     gap: 10px;
 }
 
-button {
+.nav-button {
     cursor: pointer;
     font-family: var(--sans);
     margin: 25px,5px,5px,25px;
@@ -128,20 +128,20 @@ button {
     background: var(--accent-bg);
     color: var(--accent);
 }
-    button:hover {
+    .nav-button:hover {
         background: var(--accent-border);
         transition: transform 0.3s ease, opacity 0.3s ease;
         transform: translateY(-5px);
     }
 
-.thumbnail-holder {
+.project-holder {
     margin-top: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.project-thumbnail {
+.project-object {
     width: 30%;
     height: 250px;
     border: 3px solid var(--border);
@@ -151,13 +151,24 @@ button {
     background-color: dimgrey;
 }
 
-.thumbnail-title {
+.link-title {
     font-size: 36px;
     line-height: 135%;
     padding: 4px 8px;
 }
 
-.thumbnail-content {
+    .link:visited {
+        color: purple;
+    }
+    .link:link {
+        color: var(--accent);
+        text-decoration: none;
+    }
+    .link:hover{
+        color: var(--accent);
+    }
+
+.project-content {
     font-size: 18px;
     line-height: 135%;
     padding: 4px 8px;
@@ -165,32 +176,10 @@ button {
     vertical-align: top;
 }
 
-.thumbnail-holder > * {
+.project-holder > * {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.thumbnail-holder > *:hover {
-    transform: translateY(-5px);
-}
-
-::view-transition-new(.project-enter) {
-    animation: project-fade-in 600ms ease-out both;
-}
-
-@keyframes project-fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
+    .project-holder > *:hover {
+        transform: translateY(-5px);
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    ::view-transition-new(.project-enter) {
-        animation: none;
-    }
-}
