@@ -114,7 +114,6 @@ code {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    background-color: var(--accent-bg);
 }
 
 button {
@@ -129,16 +128,17 @@ button {
     background: var(--accent-bg);
     color: var(--accent);
 }
-button:hover {
-    background: var(--accent-border);
-}
+    button:hover {
+        background: var(--accent-border);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform: translateY(-5px);
+    }
 
 .thumbnail-holder {
     margin-top: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: grey;
 }
 
 .project-thumbnail {
@@ -163,4 +163,34 @@ button:hover {
     padding: 4px 8px;
     text-align: left;
     vertical-align: top;
+}
+
+.thumbnail-holder > * {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.thumbnail-holder > *:hover {
+    transform: translateY(-5px);
+}
+
+::view-transition-new(.project-enter) {
+    animation: project-fade-in 600ms ease-out both;
+}
+
+@keyframes project-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-new(.project-enter) {
+        animation: none;
+    }
 }

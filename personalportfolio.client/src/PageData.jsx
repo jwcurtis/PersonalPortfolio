@@ -1,10 +1,10 @@
 import ProjectThumbnail from './ProjectThumbnail';
-import {useEffect, useState } from 'react';
+import { useEffect, useState, ViewTransition, startTransition} from 'react';
 
 export function ReturnContent(targetContent) {
     switch (targetContent) {
         case 'featured-projects':
-            return <ReturnProjects />;
+              return <ReturnProjects />;
         case 'languages':
             return <ReturnLanguages />;
         case 'technical-highlights':
@@ -27,14 +27,14 @@ function ReturnProjects() {
         populateProjects();
     }, []);
 
-    const featuredProjects = projects === undefined ?
-        <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        :
+    const featuredProjects = (
         <div className="thumbnail-holder">
-            {projects.map(project =>
+            {projects?.map(project => (
+               
                 <ProjectThumbnail key={project.projectId} project={project} />
-            )}
-        </div>;
+            ))}
+        </div>
+    );
 
     return (featuredProjects);
 
@@ -42,7 +42,9 @@ function ReturnProjects() {
         const response = await fetch('projects');
         if (response.ok) {
             const data = await response.json();
-            setProjects(data);
+            startTransition(() => {
+                setProjects(data);
+            });
         }
     }
 }

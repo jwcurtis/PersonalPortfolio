@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+﻿import { useState, startTransition, ViewTransition} from 'react';
 import './App.css';
 import { ReturnContent } from './PageData';
 
@@ -6,40 +6,49 @@ export function InitApp() {
     const [open, setOpen] = useState('');
     const pageContent = ReturnContent(open);
 
+    let header = (<h1>Jacob Curtis</h1>);
+    let title = (<h2>Software Engineer</h2>)
+
     return (
-        <body>
-            <h1 id="tableLabel">Jacob Curtis</h1>
-            <h2>Software Engineer</h2>
+        <div>   
+            {header}
+            {title}
             <div className = "navbar">
 
-                <button onClick={() => setOpen('featured-projects')}>
+                <button onClick={() => startTransition(() => setOpen('featured-projects'))}>
                     {open === 'featured-projects' ? 'Showing' : 'Open'} Featured Projects
                 </button>
 
-                <button onClick={() => setOpen('languages')}>
+                <button onClick={() => startTransition(() => setOpen('languages'))}>
                     {open === 'languages' ? 'Showing' : 'Open'} Languages & Frameworks
                 </button>
 
-                <button onClick={() => setOpen('technical-highlights')}>
+                <button onClick={() => startTransition(() => setOpen('technical-highlights'))}>
                     {open === 'technical-highlights' ? 'Showing' : 'Open'} Technical Highlights
                 </button>
 
-                <button onClick={() => setOpen('resume')}>
+                <button onClick={() => startTransition(() => setOpen('resume'))}>
                     {open === 'resume' ? 'Showing' : 'Open'} Resume
                 </button>
 
-                <button onClick={() => setOpen('contacts')}>
+                <button onClick={() => startTransition(() => setOpen('contacts'))}>
                     {open === 'contacts' ? 'Showing' : 'Open'} Contacts & Links
                 </button>
 
-                <button onClick={() => setOpen('education')}>
+                <button onClick={() => startTransition(() => setOpen('education'))}>
                     {open === 'education' ? 'Showing' : 'Open'} Education & Certifications
                 </button>
+
+                
             </div>
 
             <div className="content">
-                {pageContent}
+                {pageContent && (
+                    <ViewTransition key={open} enter="auto" exit="auto" update="cross-fade">
+                        <div>{pageContent}</div>
+                    </ViewTransition>
+                )}
             </div>
-        </body>
+        </div>
     );
 }
