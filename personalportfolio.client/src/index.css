@@ -134,14 +134,14 @@ code {
         transform: translateY(-5px);
     }
 
-.project-holder {
+.object-holder {
     margin-top: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.project-object {
+.square-object {
     width: 30%;
     height: 250px;
     border: 3px solid var(--border);

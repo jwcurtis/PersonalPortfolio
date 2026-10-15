@@ -1,4 +1,5 @@
 import {ProjectObject, PageHeader} from './PageObjects';
+import {LanguageFrameworkObject} from './LanguageFrameworkObjects';
 import { useEffect, useState, startTransition} from 'react';
 
 export function CreateContent(targetContent) {
@@ -30,9 +31,9 @@ function ReturnProjects() {
     const featuredProjects = (
         <div className="featured-projects">
             <PageHeader title="Featured Projects" subtitle="A showcase of my work and accomplishments." />
-            <div className="project-holder">
+            <div className="object-holder">
                 {projects?.map(project => (
-                    <ProjectObject key={project.projectId} project={project} class="project-object" />
+                    <ProjectObject key={project.projectId} project={project} class="square-object" />
                 ))}
             </div>
         </div>
@@ -52,9 +53,16 @@ function ReturnProjects() {
 }
 
 function ReturnLanguages() {
-    return (
-        <PageHeader title="Languages & Frameworks" subtitle="JavaScript, React, Node.js, Express, MongoDB, SQL, HTML, CSS" />
+    const languages = (
+        <div className="languages-frameworks">
+            <PageHeader title="Languages & Frameworks" subtitle="JavaScript, React, Node.js, Express, MongoDB, SQL, HTML, CSS" />
+            <div className="language-framework-holder">
+                <LanguageFrameworkObject />
+            </div>
+        </div>
     );
+
+    return (languages);
 }
 
 function ReturnTechnical() {

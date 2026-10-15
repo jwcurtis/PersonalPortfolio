@@ -13,11 +13,9 @@ export function InitApp() {
             <PortfolioHeader />
             <NavBar open={open} setOpen={setOpen} />
 
-            {pageContent && (
-                <ViewTransition key={open} enter="auto" exit="auto" update="cross-fade">
-                    <div>{pageContent}</div>
-                </ViewTransition>
-            )}
+            <ViewTransition key={open} enter="auto" exit="auto" update="cross-fade">
+                <div>{pageContent}</div>
+            </ViewTransition>
         </div>
     );
 }
