@@ -1,6 +1,7 @@
 import {ProjectObject, PageHeader} from './PageObjects/PageObjects';
 import { LanguageFrameworkObject } from './PageObjects/LanguageFrameworkObjects';
 import { ResumeExperienceObject } from './PageObjects/ResumeObjects';
+import { ContactsObject } from './PageObjects/ContactsObjects';
 import { useEffect, useState, startTransition} from 'react';
 
 async function populateData(url, setter) {
@@ -103,9 +104,24 @@ function ReturnResume() {
 }
 
 function ReturnContacts() {
-    return(
-        <PageHeader title="Contacts & Links" subtitle="Feel free to reach out to me through any of the following channels." />
-    )
+    const [contacts, setContacts] = useState();
+
+    useEffect(() => {
+        populateData('Contacts', setContacts);  
+    }, []);
+
+    const languagesData = (
+        <div className="languages-frameworks">
+            <PageHeader title="Contacts & Links" subtitle="Feel free to reach out to me through any of the following channels." />
+            <div className="object-holder">
+                {contacts?.map(contact => (
+                    <ContactsObject key={contact.contactId} contact={contact} class="square-object-small" />
+                ))}
+            </div>
+        </div>
+    );
+
+    return (languagesData);
 }
 
 function ReturnEducation() {

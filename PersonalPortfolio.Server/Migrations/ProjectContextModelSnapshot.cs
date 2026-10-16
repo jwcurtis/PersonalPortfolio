@@ -17,6 +17,29 @@ namespace PersonalPortfolio.Server.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.12");
 
+            modelBuilder.Entity("PersonalPortfolio.Server.Models.Contacts", b =>
+                {
+                    b.Property<int>("ContactId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ContactName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContactType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContactValue")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ContactId");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("PersonalPortfolio.Server.Models.LanguageFramework", b =>
                 {
                     b.Property<int>("LanguageFrameworkId")

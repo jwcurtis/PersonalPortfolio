@@ -58,6 +58,10 @@ export default defineConfig({
             '^/Resume': {
                 target,
                 secure: false
+            },
+            '^/Contacts': {
+                target,
+                secure: false
             }
         },
         port: parseInt(env.DEV_SERVER_PORT || '54637'),

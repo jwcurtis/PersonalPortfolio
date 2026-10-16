@@ -152,8 +152,8 @@ code {
     background-color: dimgrey;
 }
     .square-object-small {
-        width: 20%;
-        height: 200px;
+        width: 30%;
+        height: 100px;
         border: 3px solid var(--border);
         padding: 1px;
         margin: 10px;
