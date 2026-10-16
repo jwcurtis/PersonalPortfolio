@@ -1,9 +1,9 @@
  import { startTransition } from 'react';
 
-function NavButton({ label, isOpen, onClick }) {
+function NavButton({ label, onClick }) {
     return (
         <button className = "nav-button" onClick={onClick}>
-            {isOpen ? 'Showing' : 'Open'} {label}
+            {label}
         </button>
     );
 
