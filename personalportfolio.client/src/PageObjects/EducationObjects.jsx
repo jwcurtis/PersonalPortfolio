@@ -23,10 +23,10 @@ export function EducationObject({ education, class: ClassName = "" }) {
     return (
         <div className={ClassName}>
             <Title title={education.school} />
+            <Content class="education-content" content={education.honors} />
             <Content class="education-content" content={formatDate(education.dateAwarded)} />
             <Content class="education-content" content={education.degree} />
             <Content class="education-content" content={education.fieldOfStudy} />
-            <Content class="education-content" content={education.honors} />
         </div>
     );
 }

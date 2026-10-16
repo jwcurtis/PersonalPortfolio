@@ -50,8 +50,17 @@
   }
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --lightningcss-light: initial;
+        --lightningcss-dark:;
+        --text: #6b6375;
+        --text-h: #08060d;
+    }
+}
+
 body {
-  margin: 0;
+    margin: 0;
 }
 
 #root {
@@ -199,6 +208,7 @@ code {
     padding: 4px 8px;
     text-align: left;
     vertical-align: top;
+    color: var(--text-h);
 }
 
 .education-content {
@@ -207,6 +217,7 @@ code {
     padding: 4px 8px;
     text-align: center;
     vertical-align: top;
+    color: var(--text-h);
 }
 
 .language-framework-content {
@@ -214,6 +225,7 @@ code {
     line-height: 135%;
     padding: 4px 8px;
     text-align: center;
+    color: var(--text-h);
 }
 
 
