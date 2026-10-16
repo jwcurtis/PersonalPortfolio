@@ -1,0 +1,47 @@
+[
+  {
+    "jobId": 1,
+    "jobCompany": "Triangle Rock Club",
+    "jobTitle": "Shift Supervisor",
+    "jobLocation": "Richmond, VA",
+    "jobDescription": "Supervise daily climbing gym operations and maintain a safe environment. \r\nTrain and certify climbers in proper belay techniques. \r\nAssist members, resolve issues, and manage front desk operations.",
+    "dateStarted": "2026-01-13",
+    "dateEnded": null
+  },
+  {
+    "jobId": 2,
+    "jobCompany": "Reynolds and Reynolds",
+    "jobTitle": "Cloud Support Tech",
+    "jobLocation": "College Station, TX",
+    "jobDescription": "Diagnosed and resolved cloud connectivity issues. Collaborated with teammates to maintain reliable cloud services. Assisted customers with internet and network troubleshooting. Documented technical issues and solutions. ",
+    "dateStarted": "2023-09-01",
+    "dateEnded": "2024-06-01"
+  },
+  {
+    "jobId": 3,
+    "jobCompany": "Campus Advantage",
+    "jobTitle": "Community Assistant",
+    "jobLocation": "College Station, TX",
+    "jobDescription": "Assisted prospective residents through the leasing process. Responded to resident questions and concerns. Planned and hosted resident events. ",
+    "dateStarted": "2022-06-01",
+    "dateEnded": "2023-06-01"
+  },
+  {
+    "jobId": 4,
+    "jobCompany": "Landry's",
+    "jobTitle": "Information Technology Intern",
+    "jobLocation": "Houston, TX",
+    "jobDescription": "Monitored network connectivity for hundreds of restaurant locations. Assisted with hardware and system deployments. Documented technical procedures. ",
+    "dateStarted": "2021-05-01",
+    "dateEnded": "2021-08-31"
+  },
+  {
+    "jobId": 5,
+    "jobCompany": "Chick-fil-A",
+    "jobTitle": "Team Member",
+    "jobLocation": "Sugar Land, TX",
+    "jobDescription": "Delivered excellent customer service and processed transactions accurately. Worked effectively in a fast-paced team environment. ",
+    "dateStarted": "2019-09-01",
+    "dateEnded": "2020-03-01"
+  }
+]

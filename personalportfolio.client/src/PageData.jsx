@@ -6,7 +6,9 @@ import { TechnicalObject } from './PageObjects/TechnicalObjects';
 import { EducationObject } from './PageObjects/EducationObjects'; 
 import { useEffect, useState, startTransition} from 'react';
 
-async function populateData(url, setter) {
+
+async function fullStackPopulateData(url, setter) {
+    //Unused function, would be used to populate data from a full stack database.
     const response = await fetch(url);
     if (response.ok) {
         const data = await response.json();
@@ -15,6 +17,19 @@ async function populateData(url, setter) {
         });
     }
 }
+
+async function populateData(url, setter) {
+    try {
+        const data = await import(`./data/${url}.json`);
+        startTransition(() => {
+            setter(data.default);
+        });
+    }
+    catch (error) {
+        console.error(`Error loading data from ${url}.json:`, error);
+    }
+}
+
 export function CreateContent(targetContent) {
     switch (targetContent) {
         case 'featured-projects':
@@ -82,7 +97,7 @@ function ReturnTechnical() {
     const [technical, setTechnical] = useState();
 
     useEffect(() => {
-        populateData('Technical', setTechnical);
+        populateData('technical', setTechnical);
     }, []);
 
     const technicalHighlights = (
@@ -103,7 +118,7 @@ function ReturnResume() {
     const [experiences, setExperiences] = useState();
 
     useEffect(() => {
-        populateData('Resume', setExperiences);
+        populateData('resume', setExperiences);
     }, []);
 
     const languagesData = (
@@ -124,7 +139,7 @@ function ReturnContacts() {
     const [contacts, setContacts] = useState();
 
     useEffect(() => {
-        populateData('Contacts', setContacts);  
+        populateData('contacts', setContacts);  
     }, []);
 
     const languagesData = (
@@ -145,7 +160,7 @@ function ReturnEducation() {
     const [educations, setEducations] = useState();
 
     useEffect(() => {
-        populateData('Education', setEducations);
+        populateData('education', setEducations);
     }, []);
 
     const educationData = (

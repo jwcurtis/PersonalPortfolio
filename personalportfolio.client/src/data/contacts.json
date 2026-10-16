@@ -1,0 +1,20 @@
+[
+  {
+    "contactId": 3,
+    "contactName": "GitHub",
+    "contactType": "Link",
+    "contactValue": "https://github.com/jwcurtis"
+  },
+  {
+    "contactId": 2,
+    "contactName": "Email",
+    "contactType": "Email",
+    "contactValue": "jacobwcurtis@hotmail.com"
+  },
+  {
+    "contactId": 1,
+    "contactName": "LinkedIn",
+    "contactType": "Link",
+    "contactValue": "https://www.linkedin.com/in/jacob-curtis-a90874300/"
+  }
+]

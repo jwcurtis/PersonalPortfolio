@@ -1,0 +1,47 @@
+[
+  {
+    "languageFrameworkId": 4,
+    "name": "Lua",
+    "proficiencyLevel": "High"
+  },
+  {
+    "languageFrameworkId": 5,
+    "name": "SQL",
+    "proficiencyLevel": "High"
+  },
+  {
+    "languageFrameworkId": 1,
+    "name": "C++",
+    "proficiencyLevel": "High"
+  },
+  {
+    "languageFrameworkId": 8,
+    "name": "Python",
+    "proficiencyLevel": "High"
+  },
+  {
+    "languageFrameworkId": 9,
+    "name": "Entity Core Framework",
+    "proficiencyLevel": "Medium"
+  },
+  {
+    "languageFrameworkId": 2,
+    "name": "C#",
+    "proficiencyLevel": "Medium"
+  },
+  {
+    "languageFrameworkId": 3,
+    "name": "JavaScript",
+    "proficiencyLevel": "Medium"
+  },
+  {
+    "languageFrameworkId": 6,
+    "name": "HTML",
+    "proficiencyLevel": "Medium"
+  },
+  {
+    "languageFrameworkId": 7,
+    "name": "React",
+    "proficiencyLevel": "Medium"
+  }
+]
