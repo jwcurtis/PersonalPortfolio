@@ -8,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<PortfolioContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("PortfolioDatabase")
-        ?? "Data Source=portfolio.db"));
+        builder.Configuration.GetConnectionString("PortfolioDatabase")));
 builder.Services.AddOpenApi();
 
 var app = builder.Build();

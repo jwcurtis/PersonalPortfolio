@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -7,6 +7,7 @@
     <SpaRoot>..\personalportfolio.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:54637</SpaProxyServerUrl>
+    <UserSecretsId>03d12a96-2435-4cc3-8d76-3d082f32d6af</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
