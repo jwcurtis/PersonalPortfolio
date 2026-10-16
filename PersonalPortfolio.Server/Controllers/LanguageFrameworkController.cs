@@ -22,7 +22,7 @@ namespace PersonalPortfolio.Server.Controllers
         {
             var languageFrameworks = await _context.LanguageFrameworks
                 .AsNoTracking()
-                .OrderByDescending(p => p.ProficiencyLevel)
+                .OrderBy(p => p.ProficiencyLevel)
                 .ToListAsync();
 
             return Ok(languageFrameworks);
