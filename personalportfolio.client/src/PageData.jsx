@@ -68,7 +68,7 @@ function ReturnLanguages() {
             <PageHeader title="Languages & Frameworks" subtitle="Programming languages and frameworks I have worked with." />
             <div className="object-holder">
                 {languages?.map(language => (
-                    <LanguageFrameworkObject key={language.languageFrameworkId} languageFramework={language} class ="square-object-small" />
+                    <LanguageFrameworkObject key={language.languageFrameworkId} languageFramework={language} class ="square-object" />
                 ))}
             </div>
         </div>
@@ -132,7 +132,7 @@ function ReturnContacts() {
             <PageHeader title="Contacts & Links" subtitle="Feel free to reach out to me through any of the following channels." />
             <div className="object-holder">
                 {contacts?.map(contact => (
-                    <ContactsObject key={contact.contactId} contact={contact} class="square-object-small" />
+                    <ContactsObject key={contact.contactId} contact={contact} class="square-object" />
                 ))}
             </div>
         </div>

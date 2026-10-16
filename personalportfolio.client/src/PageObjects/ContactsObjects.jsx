@@ -1,20 +1,27 @@
-function ContactsContent({ contentType, content}) {
+
+function ContactsContent({ contentType, content }) {
     switch (contentType) {
         case "Email":
             return (
-                <a className="link" href={`mailto:${content}`} target="_blank" rel="noopener noreferrer">
-                    {content}
-                </a>
+                <h3 className="contactLink">
+                    <a className="link" href={`mailto:${content}`} target="_blank" rel="noopener noreferrer">
+                        {content}
+                    </a>
+                </h3>
             );
         case "Phone":
             return (
-                <p>{content}</p>
+                <h3 className="contactLink">
+                    <p>{content}</p>
+                </h3>
             );
         case "Link":
             return (
-                <a className="link" href={content} target="_blank" rel="noopener noreferrer">
-                    Visit!
-                </a>
+                <h3 className="contactLink">
+                    <a className="link" href={content} target="_blank" rel="noopener noreferrer">
+                        View Profile!
+                    </a>
+                </h3>   
             );
     }
 }
