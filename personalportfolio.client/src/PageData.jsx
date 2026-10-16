@@ -2,6 +2,8 @@ import {ProjectObject, PageHeader} from './PageObjects/PageObjects';
 import { LanguageFrameworkObject } from './PageObjects/LanguageFrameworkObjects';
 import { ResumeExperienceObject } from './PageObjects/ResumeObjects';
 import { ContactsObject } from './PageObjects/ContactsObjects';
+import { TechnicalObject } from './PageObjects/TechnicalObjects';
+import { EducationObject } from './PageObjects/EducationObjects'; 
 import { useEffect, useState, startTransition} from 'react';
 
 async function populateData(url, setter) {
@@ -77,9 +79,24 @@ function ReturnLanguages() {
 }
 
 function ReturnTechnical() {
-    return (
-        <PageHeader title="Technical Highlights" subtitle="Full Stack Development, RESTful APIs, Responsive Design, Version Control (Git), Agile Methodologies" />
+    const [technical, setTechnical] = useState();
+
+    useEffect(() => {
+        populateData('Technical', setTechnical);
+    }, []);
+
+    const technicalHighlights = (
+        <div className="technical-highlights">
+            <PageHeader title="Technical Highlights" subtitle="Full Stack Development, RESTful APIs, Responsive Design, Version Control (Git), Agile Methodologies" />
+            <div className="object-holder">
+                {technical?.map(tech => (
+                    <TechnicalObject key={tech.technicalId} technicalHighlight={tech} class="square-object" />
+                ))}
+            </div>
+        </div>
     );
+
+    return (technicalHighlights);
 }
 
 function ReturnResume() {
@@ -125,7 +142,22 @@ function ReturnContacts() {
 }
 
 function ReturnEducation() {
-    return(
-        <PageHeader title="Education & Certifications" subtitle="Bachelor of Science in Computer Science" />
-    )
+    const [educations, setEducations] = useState();
+
+    useEffect(() => {
+        populateData('Education', setEducations);
+    }, []);
+
+    const educationData = (
+        <div className="education">
+            <PageHeader title="Education & Certifications" subtitle="Bachelor of Science in Computer Science" />
+            <div className="object-holder">
+                {educations?.map(education => (
+                    <EducationObject key={education.educationId} education={education} class="square-object" />
+                ))}
+            </div>
+        </div>
+    );
+
+    return (educationData);
 }

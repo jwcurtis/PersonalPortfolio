@@ -210,6 +210,14 @@ code {
     vertical-align: top;
 }
 
+.education-content {
+    font-size: 18px;
+    line-height: 135%;
+    padding: 4px 8px;
+    text-align: center;
+    vertical-align: top;
+}
+
 .language-framework-content {
     font-size: 18px;
     line-height: 135%;

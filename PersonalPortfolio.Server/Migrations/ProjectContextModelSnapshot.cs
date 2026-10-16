@@ -40,6 +40,36 @@ namespace PersonalPortfolio.Server.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("PersonalPortfolio.Server.Models.Education", b =>
+                {
+                    b.Property<int>("EducationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DateAwarded")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Degree")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FieldOfStudy")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Honors")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("School")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EducationId");
+
+                    b.ToTable("Education");
+                });
+
             modelBuilder.Entity("PersonalPortfolio.Server.Models.LanguageFramework", b =>
                 {
                     b.Property<int>("LanguageFrameworkId")
@@ -123,6 +153,29 @@ namespace PersonalPortfolio.Server.Migrations
                     b.HasKey("JobId");
 
                     b.ToTable("ResumeExperience");
+                });
+
+            modelBuilder.Entity("PersonalPortfolio.Server.Models.Technical", b =>
+                {
+                    b.Property<int>("TechnicalId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TechnicalDescription")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TechnicalName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TechnicalType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("TechnicalId");
+
+                    b.ToTable("Technicals");
                 });
 #pragma warning restore 612, 618
         }
