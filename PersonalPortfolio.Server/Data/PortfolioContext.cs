@@ -15,5 +15,7 @@ namespace PersonalPortfolio.Server.Data
         public DbSet<LanguageFramework> LanguageFrameworks => Set<LanguageFramework>();
         public DbSet<ResumeExperience> ResumeExperience => Set<ResumeExperience>();
         public DbSet<Contacts> Contacts => Set<Contacts>();
+        public DbSet<Education> Education => Set<Education>();
+        public DbSet<Technical> Technicals => Set<Technical>();
     }
 }

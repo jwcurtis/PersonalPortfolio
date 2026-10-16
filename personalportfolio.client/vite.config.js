@@ -62,6 +62,14 @@ export default defineConfig({
             '^/Contacts': {
                 target,
                 secure: false
+            },
+            '^/Education': {
+                target,
+                secure: false
+            },
+            '^/Technical': {
+                target,
+                secure: false
             }
         },
         port: parseInt(env.DEV_SERVER_PORT || '54637'),
