@@ -10,9 +10,9 @@ namespace PersonalPortfolio.Server.Controllers
     [Route("[controller]")]
     public class ProjectsController : ControllerBase
     {
-        private readonly ProjectContext _context;
+        private readonly PortfolioContext _context;
 
-        public ProjectsController(ProjectContext context)
+        public ProjectsController(PortfolioContext context)
         {
             _context = context;
         }

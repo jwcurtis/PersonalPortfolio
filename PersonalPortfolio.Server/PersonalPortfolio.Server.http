@@ -4,3 +4,11 @@ GET {{PersonalPortfolio.Server_HostAddress}}/projects/
 Accept: application/json
 
 ###
+GET {{PersonalPortfolio.Server_HostAddress}}/languageframework/
+Accept: application/json
+
+###
+GET {{PersonalPortfolio.Server_HostAddress}}/resumeexperience/
+Accept: application/json
+
+###

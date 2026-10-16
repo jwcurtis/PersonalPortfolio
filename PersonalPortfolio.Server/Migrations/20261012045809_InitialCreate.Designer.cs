@@ -10,7 +10,7 @@ using PersonalPortfolio.Server.Data;
 
 namespace PersonalPortfolio.Server.Migrations
 {
-    [DbContext(typeof(ProjectContext))]
+    [DbContext(typeof(PortfolioContext))]
     [Migration("20261012045809_InitialCreate")]
     partial class InitialCreate
     {

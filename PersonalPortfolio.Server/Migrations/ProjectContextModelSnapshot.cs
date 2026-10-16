@@ -9,13 +9,32 @@ using PersonalPortfolio.Server.Data;
 
 namespace PersonalPortfolio.Server.Migrations
 {
-    [DbContext(typeof(ProjectContext))]
+    [DbContext(typeof(PortfolioContext))]
     partial class ProjectContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.12");
+
+            modelBuilder.Entity("PersonalPortfolio.Server.Models.LanguageFramework", b =>
+                {
+                    b.Property<int>("LanguageFrameworkId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProficiencyLevel")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("LanguageFrameworkId");
+
+                    b.ToTable("LanguageFrameworks");
+                });
 
             modelBuilder.Entity("PersonalPortfolio.Server.Models.Project", b =>
                 {
@@ -48,6 +67,39 @@ namespace PersonalPortfolio.Server.Migrations
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("PersonalPortfolio.Server.Models.ResumeExperience", b =>
+                {
+                    b.Property<int>("JobId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateOnly?>("DateEnded")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateOnly>("DateStarted")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("JobCompany")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("JobDescription")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("JobLocation")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("JobId");
+
+                    b.ToTable("ResumeExperience");
                 });
 #pragma warning restore 612, 618
         }

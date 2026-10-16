@@ -1,7 +1,7 @@
 ﻿import { useState, ViewTransition} from 'react';
 import './App.css';
 import { CreateContent } from './PageData';
-import { PortfolioHeader } from './PageObjects';
+import { PortfolioHeader } from './PageObjects/PageObjects';
 import { NavBar } from './NavBar';
 
 export function InitApp() {

@@ -50,6 +50,14 @@ export default defineConfig({
             '^/projects': {
                 target,
                 secure: false
+            },
+            '^/languageframework': {
+                target,
+                secure: false
+            },
+            '^/Resume': {
+                target,
+                secure: false
             }
         },
         port: parseInt(env.DEV_SERVER_PORT || '54637'),

@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<ProjectContext>(options =>
+builder.Services.AddDbContext<PortfolioContext>(options =>
     options.UseSqlite(
         builder.Configuration.GetConnectionString("PortfolioDatabase")
         ?? "Data Source=portfolio.db"));

@@ -31,6 +31,3 @@ export function TypeWriter(element, text, speed = 75, delay = 0) {
     }, delay);
 }
 
-export function PlaceObject(element) {
-
-}

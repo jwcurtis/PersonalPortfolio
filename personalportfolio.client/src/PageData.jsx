@@ -1,7 +1,17 @@
-import {ProjectObject, PageHeader} from './PageObjects';
-import {LanguageFrameworkObject} from './LanguageFrameworkObjects';
+import {ProjectObject, PageHeader} from './PageObjects/PageObjects';
+import { LanguageFrameworkObject } from './PageObjects/LanguageFrameworkObjects';
+import { ResumeExperienceObject } from './PageObjects/ResumeObjects';
 import { useEffect, useState, startTransition} from 'react';
 
+async function populateData(url, setter) {
+    const response = await fetch(url);
+    if (response.ok) {
+        const data = await response.json();
+        startTransition(() => {
+            setter(data);
+        });
+    }
+}
 export function CreateContent(targetContent) {
     switch (targetContent) {
         case 'featured-projects':
@@ -25,7 +35,7 @@ function ReturnProjects() {
     const [projects, setProjects] = useState();
 
     useEffect(() => {
-        populateProjects();
+        populateData('projects', setProjects);
     }, []);
 
     const featuredProjects = (
@@ -41,28 +51,28 @@ function ReturnProjects() {
 
     return (featuredProjects);
 
-    async function populateProjects() {
-        const response = await fetch('projects');
-        if (response.ok) {
-            const data = await response.json();
-            startTransition(() => {
-                setProjects(data);
-            });
-        }
-    }
 }
 
 function ReturnLanguages() {
-    const languages = (
+    const [languages, setLanguages] = useState();
+
+    useEffect(() => {
+        populateData('languageframework', setLanguages);
+    }, []);
+
+    const languagesData = (
         <div className="languages-frameworks">
             <PageHeader title="Languages & Frameworks" subtitle="JavaScript, React, Node.js, Express, MongoDB, SQL, HTML, CSS" />
-            <div className="language-framework-holder">
-                <LanguageFrameworkObject />
+            <div className="object-holder">
+                {languages?.map(language => (
+                    <LanguageFrameworkObject key={language.languageFrameworkId} languageFramework={language} class ="square-object-small" />
+                ))}
             </div>
         </div>
     );
 
-    return (languages);
+    return (languagesData);
+
 }
 
 function ReturnTechnical() {
@@ -72,9 +82,24 @@ function ReturnTechnical() {
 }
 
 function ReturnResume() {
-    return(
-        <PageHeader title="Resume" subtitle="Download my resume for a detailed overview of my skills and experience." />
-    )
+    const [experiences, setExperiences] = useState();
+
+    useEffect(() => {
+        populateData('Resume', setExperiences);
+    }, []);
+
+    const languagesData = (
+        <div className="languages-frameworks">
+            <PageHeader title="Resume" subtitle="A summary of professional experience and qualifications." />
+            <div className="object-holder">
+                {experiences?.map(experience => (
+                    <ResumeExperienceObject key={experience.jobId} resumeExperience={experience} class="square-object-long" />
+                ))}
+            </div>
+        </div>
+    );
+
+    return (languagesData);
 }
 
 function ReturnContacts() {
