@@ -65,7 +65,7 @@ function ReturnLanguages() {
 
     const languagesData = (
         <div className="languages-frameworks">
-            <PageHeader title="Languages & Frameworks" subtitle="JavaScript, React, Node.js, Express, MongoDB, SQL, HTML, CSS" />
+            <PageHeader title="Languages & Frameworks" subtitle="Programming languages and frameworks I have worked with." />
             <div className="object-holder">
                 {languages?.map(language => (
                     <LanguageFrameworkObject key={language.languageFrameworkId} languageFramework={language} class ="square-object-small" />
@@ -87,7 +87,7 @@ function ReturnTechnical() {
 
     const technicalHighlights = (
         <div className="technical-highlights">
-            <PageHeader title="Technical Highlights" subtitle="Full Stack Development, RESTful APIs, Responsive Design, Version Control (Git), Agile Methodologies" />
+            <PageHeader title="Technical Highlights" subtitle="Highlights of some of my technical work" />
             <div className="object-holder">
                 {technical?.map(tech => (
                     <TechnicalObject key={tech.technicalId} technicalHighlight={tech} class="square-object" />
@@ -150,7 +150,7 @@ function ReturnEducation() {
 
     const educationData = (
         <div className="education">
-            <PageHeader title="Education & Certifications" subtitle="Bachelor of Science in Computer Science" />
+            <PageHeader title="Education & Certifications"  />
             <div className="object-holder">
                 {educations?.map(education => (
                     <EducationObject key={education.educationId} education={education} class="square-object" />
