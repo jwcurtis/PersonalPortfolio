@@ -1,3 +1,12 @@
+function formatDate(dateString) {
+    if (!dateString) return "Present";
+
+    return new Date(dateString).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+}
 function Paragraph({ content, class: ClassName = "" }) {
     return (
         <p className={ClassName}>{content}</p>
@@ -29,7 +38,7 @@ export function ProjectObject({ project, class : ClassName = "" }) {
             <TitleLink title={project.projectName} link={project.projectLink} />
             <Paragraph class = "project-content" content={project.projectType} />
             <Paragraph class = "project-content" content={project.projectDescription} />
-            <Paragraph class = "project-content" content={project.dateCompleted} />
+            <Paragraph class = "project-content" content={formatDate(project.dateCompleted)} />
         </div>
         
     );

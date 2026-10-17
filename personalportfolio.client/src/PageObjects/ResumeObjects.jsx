@@ -1,3 +1,12 @@
+function formatDate(dateString) {
+    if (!dateString) return "Present";
+
+    return new Date(dateString).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+}
 function Paragraph({ content, class: ClassName = "" }) {
     return (
         <p className={ClassName}>{content}</p>
@@ -11,11 +20,12 @@ function Title({ company, jobtitle}) {
     );
 }
 function SubTitle({ location, dateStart, dateEnd, class: ClassName = "" }) {
-    const endDate = dateEnd ? dateEnd : "Present";
+    const startDate = formatDate(dateStart);
+    const endDate = formatDate(dateEnd);
 
     return (
         <p className={ClassName}>
-            {location} | {dateStart} - {endDate}
+            {location} | {startDate} - {endDate}
         </p>
     );
 }
