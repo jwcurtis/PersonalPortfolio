@@ -105,7 +105,7 @@ function ReturnTechnical() {
             <PageHeader title="Technical Highlights" subtitle="Highlights of some of my technical work" />
             <div className="object-holder">
                 {technical?.map(tech => (
-                    <TechnicalObject key={tech.technicalId} technicalHighlight={tech} class="square-object" />
+                    <TechnicalObject key={tech.technicalId} technicalHighlight={tech} class="technical-object" />
                 ))}
             </div>
         </div>
@@ -124,7 +124,7 @@ function ReturnResume() {
     const languagesData = (
         <div className="languages-frameworks">
             <PageHeader title="Resume" subtitle="A summary of professional experience and qualifications." />
-            <div className="object-holder">
+            <div className="resume-holder">
                 {experiences?.map(experience => (
                     <ResumeExperienceObject key={experience.jobId} resumeExperience={experience} class="square-object-long" />
                 ))}
@@ -166,9 +166,9 @@ function ReturnEducation() {
     const educationData = (
         <div className="education">
             <PageHeader title="Education & Certifications"  />
-            <div className="object-holder">
+            <div className="education-holder">
                 {educations?.map(education => (
-                    <EducationObject key={education.educationId} education={education} class="square-object" />
+                    <EducationObject key={education.educationId} education={education} class="education-object" />
                 ))}
             </div>
         </div>
