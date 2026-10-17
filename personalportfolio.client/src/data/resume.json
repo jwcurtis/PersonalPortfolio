@@ -5,7 +5,7 @@
     "jobTitle": "Shift Supervisor",
     "jobLocation": "Richmond, VA",
     "jobDescription": "Supervise daily climbing gym operations and maintain a safe environment. \r\nTrain and certify climbers in proper belay techniques. \r\nAssist members, resolve issues, and manage front desk operations.",
-    "dateStarted": "2026-01-13",
+    "dateStarted": "01-13-2026",
     "dateEnded": null
   },
   {
@@ -14,8 +14,8 @@
     "jobTitle": "Cloud Support Tech",
     "jobLocation": "College Station, TX",
     "jobDescription": "Diagnosed and resolved cloud connectivity issues. Collaborated with teammates to maintain reliable cloud services. Assisted customers with internet and network troubleshooting. Documented technical issues and solutions. ",
-    "dateStarted": "2023-09-01",
-    "dateEnded": "2024-06-01"
+    "dateStarted": "09-01-2023",
+    "dateEnded": "06-01-2024"
   },
   {
     "jobId": 3,
@@ -23,8 +23,8 @@
     "jobTitle": "Community Assistant",
     "jobLocation": "College Station, TX",
     "jobDescription": "Assisted prospective residents through the leasing process. Responded to resident questions and concerns. Planned and hosted resident events. ",
-    "dateStarted": "2022-06-01",
-    "dateEnded": "2023-06-01"
+    "dateStarted": "06-01-2022",
+    "dateEnded": "06-01-2023"
   },
   {
     "jobId": 4,
@@ -32,8 +32,8 @@
     "jobTitle": "Information Technology Intern",
     "jobLocation": "Houston, TX",
     "jobDescription": "Monitored network connectivity for hundreds of restaurant locations. Assisted with hardware and system deployments. Documented technical procedures. ",
-    "dateStarted": "2021-05-01",
-    "dateEnded": "2021-08-31"
+    "dateStarted": "05-01-2021",
+    "dateEnded": "08-31-2021"
   },
   {
     "jobId": 5,
@@ -41,7 +41,7 @@
     "jobTitle": "Team Member",
     "jobLocation": "Sugar Land, TX",
     "jobDescription": "Delivered excellent customer service and processed transactions accurately. Worked effectively in a fast-paced team environment. ",
-    "dateStarted": "2019-09-01",
-    "dateEnded": "2020-03-01"
+    "dateStarted": "09-01-2019",
+    "dateEnded": "03-01-2020"
   }
 ]
