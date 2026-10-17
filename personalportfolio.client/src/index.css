@@ -117,6 +117,7 @@ h2 {
     font-weight: 500;
     color: var(--text-h);
     overflow-wrap: anywhere;
+    padding: 1px 4px;
 }
 
 h1 {
