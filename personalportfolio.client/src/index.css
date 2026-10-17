@@ -117,7 +117,8 @@ h2 {
     font-weight: 500;
     color: var(--text-h);
     overflow-wrap: anywhere;
-    padding: 1px 4px;
+    padding: 2px 4px;
+    line-height: 1.2;
 }
 
 h1 {
@@ -368,7 +369,6 @@ code {
         font-size: 22px;
     }
 
-    /* Keep navigation compact and readable */
     .navbar {
         width: 100%;
         padding: 8px 12px;
@@ -384,7 +384,6 @@ code {
         line-height: 125%;
     }
 
-    /* One card per row on phones */
     .object-holder {
         grid-template-columns: minmax(0, 1fr);
         gap: 14px;
@@ -416,14 +415,12 @@ code {
         padding: 6px;
     }
 
-    /* Avoid hover-only movement on touch devices */
     .nav-button:hover,
     .project-holder > *:hover {
         transform: none;
     }
 }
 
-/* Very narrow phones */
 @media (max-width: 360px) {
     .nav-button {
         font-size: 14px;
@@ -439,7 +436,6 @@ code {
     }
 }
 
-/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
