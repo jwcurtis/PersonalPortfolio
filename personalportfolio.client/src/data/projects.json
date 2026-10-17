@@ -5,8 +5,8 @@
     "projectType": "Game Development",
     "projectDescription": "A work in progress sequel game to ARC-32, currently in early testing phases as development continues.",
     "projectLink": "https://www.roblox.com/games/89223783858813/ARC-Sisyphus-Pre-Alpha-Release",
-    "dateCompleted": "08-20-2026",
-    "lastUpdated": "10-11-2026"
+    "dateCompleted": "August 20th, 2026",
+    "lastUpdated": "October 11th, 2026"
   },
   {
     "projectId": 2,
@@ -14,8 +14,8 @@
     "projectType": "Game Development",
     "projectDescription": "A sucessful game with over 500,000 visits. Worked as a contributor to the game, implementing bug fixes, system overhauls, codebase refactors, and content updates.",
     "projectLink": "https://www.roblox.com/games/4525999910/ARC-32",
-    "dateCompleted": "01-01-2024",
-    "lastUpdated": "09-18-2024"
+    "dateCompleted": "January 1st, 2024",
+    "lastUpdated": "September 18th, 2024"
   },
   {
     "projectId": 3,
@@ -23,7 +23,7 @@
     "projectType": "Full Stack Web App",
     "projectDescription": "Currently being viewed! Full stack web application, utilizing Microsoft Azure for web hosting and database hosting. Programmed in HTML, JavaScript, and C#, utilizing React and Entity Core Framework.",
     "projectLink": "https://jwcurtis-portfolio-d8czhfa6b6fueggq.westus3-01.azurewebsites.net/",
-    "dateCompleted": "10-16-2026",
-    "lastUpdated": "10-16-2026"
+    "dateCompleted": "October 16th, 2026",
+    "lastUpdated": "October 16th, 2026"
   }
 ]

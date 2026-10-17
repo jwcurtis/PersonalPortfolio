@@ -5,7 +5,7 @@
     "jobTitle": "Shift Supervisor",
     "jobLocation": "Richmond, VA",
     "jobDescription": "Supervise daily climbing gym operations and maintain a safe environment. \r\nTrain and certify climbers in proper belay techniques. \r\nAssist members, resolve issues, and manage front desk operations.",
-    "dateStarted": "01-13-2026",
+    "dateStarted": "January 13th, 2026",
     "dateEnded": null
   },
   {
@@ -14,8 +14,8 @@
     "jobTitle": "Cloud Support Tech",
     "jobLocation": "College Station, TX",
     "jobDescription": "Diagnosed and resolved cloud connectivity issues. Collaborated with teammates to maintain reliable cloud services. Assisted customers with internet and network troubleshooting. Documented technical issues and solutions. ",
-    "dateStarted": "09-01-2023",
-    "dateEnded": "06-01-2024"
+    "dateStarted": "September 1st, 2023",
+    "dateEnded": "June 1st, 2024"
   },
   {
     "jobId": 3,
@@ -23,8 +23,8 @@
     "jobTitle": "Community Assistant",
     "jobLocation": "College Station, TX",
     "jobDescription": "Assisted prospective residents through the leasing process. Responded to resident questions and concerns. Planned and hosted resident events. ",
-    "dateStarted": "06-01-2022",
-    "dateEnded": "06-01-2023"
+    "dateStarted": "June 1st, 2022",
+    "dateEnded": "June 1st, 2023"
   },
   {
     "jobId": 4,
@@ -32,8 +32,8 @@
     "jobTitle": "Information Technology Intern",
     "jobLocation": "Houston, TX",
     "jobDescription": "Monitored network connectivity for hundreds of restaurant locations. Assisted with hardware and system deployments. Documented technical procedures. ",
-    "dateStarted": "05-01-2021",
-    "dateEnded": "08-31-2021"
+    "dateStarted": "May 1st, 2021",
+    "dateEnded": "August 31st, 2021"
   },
   {
     "jobId": 5,
@@ -41,7 +41,7 @@
     "jobTitle": "Team Member",
     "jobLocation": "Sugar Land, TX",
     "jobDescription": "Delivered excellent customer service and processed transactions accurately. Worked effectively in a fast-paced team environment. ",
-    "dateStarted": "09-01-2019",
-    "dateEnded": "03-01-2020"
+    "dateStarted": "September 1st, 2019",
+    "dateEnded": "March 1st, 2020"
   }
 ]
