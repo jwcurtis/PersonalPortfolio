@@ -46,10 +46,12 @@
 
 @media (prefers-color-scheme: light) {
     :root {
+        --border: rgba(170, 59, 255, 0.5);
         --lightningcss-light: initial;
         --lightningcss-dark:;
         --text: #6b6375;
         --text-h: #08060d;
+        --bg: #e5e4e7;
     }
 }
 
@@ -227,7 +229,7 @@ code {
     padding: 1px;
     margin: 0;
     border-radius: 15px;
-    background-color: dimgrey;
+    background-color: var(--bg);
     overflow-wrap: anywhere;
 }
 
@@ -241,7 +243,7 @@ code {
     padding: 1px;
     margin: 0 auto;
     border-radius: 15px;
-    background-color: dimgrey;
+    background-color: var(--bg);
     overflow-wrap: anywhere;
 }
 
@@ -255,7 +257,7 @@ code {
     padding: 1px;
     margin: 0 auto;
     border-radius: 15px;
-    background-color: dimgrey;
+    background-color: var(--bg);
     overflow-wrap: anywhere;
 }
 
